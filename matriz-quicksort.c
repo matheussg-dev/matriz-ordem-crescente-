@@ -20,11 +20,11 @@ void matrizbase(int quantidade) {
     int matrizCrescente[quantidade];
 
     for (linha = 0; linha < quantidade; linha++) {
-        printf("\nDigite o número para a posição [%d].", linha);
+        printf("\nDigite o número para a posição [%d]:", linha);
         scanf("%d", &matrizCrescente[linha]);
     }
 
-    printf("\nMatriz");
+    printf("\nMatriz:");
     for (linha = 0; linha < quantidade; linha++) {
         printf(" [%d]", matrizCrescente[linha]);
     }
@@ -52,12 +52,18 @@ void quicksort(int matrizVerificar[], int linhas) {
         if (esquerda <= direita) {
             int veri = matrizVerificar[esquerda]; 
             matrizVerificar[esquerda] = matrizVerificar[direita];
-            matrizVerificar[direita] = veri; // swanp onde e necessario mais um elemento para inverter a ordem
-            esquerda++;
+            matrizVerificar[direita] = veri;
             direita--;
             
-            //nao precisa de parentes so da matrizVerificar[]
         }
+    }
+    
+    if(esquerda < direita) {
+        
+    }
+    
+    if(direita < esquerda) {
+        
     }
 
     printf("\n\nMatriz ordenada:");
