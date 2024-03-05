@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 void matrizbase(int quantidade);
-void bublesort();
+void bublesort(int matrizVereficar[], int linha);
 
 int main() {
     
@@ -31,6 +31,10 @@ void matrizbase(int quantidade) {
     bublesort(matrizCrescente, quantidade);
 }
 
-void bublesort() {
+void bublesort(int matrizVereficar[], int linha) {
+    
+    if(matrizVereficar[0] > matrizVereficar[1]) {
+        (matrizVereficar[0], matrizVereficar[1]) = (matrizVereficar[1], matrizVereficar[0]);
+    }
     
 }
