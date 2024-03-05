@@ -35,14 +35,14 @@ void matrizbase(int quantidade) {
 
 void bubblesort(int matrizVerificar[], int linhas) {
     
-    int i, j, veri;
+    int i, j, referencia;
 
     for (i = 0; i < linhas - 1; i++) {
         for (j = 0; j < linhas - i - 1; j++) {
             if (matrizVerificar[j] > matrizVerificar[j + 1]) {
-                veri = matrizVerificar[j];
+                referencia = matrizVerificar[j];
                 matrizVerificar[j] = matrizVerificar[j + 1];
-                matrizVerificar[j + 1] = veri;
+                matrizVerificar[j + 1] = referencia;
             }
         }
     }
