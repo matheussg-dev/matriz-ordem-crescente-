@@ -31,8 +31,23 @@ void matrizbase(int quantidade) {
     bublesort(matrizCrescente, quantidade);
 }
 
-void bublesort(int matrizVereficar[] linha) {
+void bubblesort(int matrizVerificar[], int linhas) {
     
-    for(var posicao = 0; posicao > linha.length - 1; posicao--) {
+    int i, j, temp;
+
+    for (i = 0; i < linhas - 1; i++) {
+        for (j = 0; j < linhas - i - 1; j++) {
+            if (matrizVerificar[j] > matrizVerificar[j + 1]) {
+                temp = matrizVerificar[j];
+                matrizVerificar[j] = matrizVerificar[j + 1];
+                matrizVerificar[j + 1] = temp;
+            }
+        }
+    }
+    
+    printf("\nMatriz ordenada.");
+    
+    for (i = 0; i < linhas; i++) {
+        printf(" [%d]", matrizVerificar[i]);
     }
 }
