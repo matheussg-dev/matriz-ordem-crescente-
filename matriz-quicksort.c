@@ -36,17 +36,21 @@ void matrizbase(int quantidade) {
 void quicksort(int matrizVerificar[], int linhas) {
 
     int posicao;
-    int direita = linha.length - 1;
+    int direita = linha - 1;
     int esquerda = 0;
-    int veri = linha[0];
+    int veri = matrizVerificar[0];
     
     while(esquerda <= direita) {
         
-        while()
-        while()
+        while(matrizVerificar[esquerda] < veri) esquerda++;
+        while(matrizVerificar[direita] >= veri) direita++;
         
+        if(esquerda <= direita) {
+            (matrizVerificar[esquerda], matrizVerificar[direita]) = (matrizVerificar[direita], matrizVerificar[esquerda]);
+            esquerda++;
+            direita--;
+        }
     }
-
 
     printf("\n\nMatriz ordenada.");
     
