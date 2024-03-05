@@ -31,10 +31,8 @@ void matrizbase(int quantidade) {
     bublesort(matrizCrescente, quantidade);
 }
 
-void bublesort(int matrizVereficar[], int linha) {
+void bublesort(int matrizVereficar[] linha) {
     
-    if(matrizVereficar[0] > matrizVereficar[1]) {
-        (matrizVereficar[0], matrizVereficar[1]) = (matrizVereficar[1], matrizVereficar[0]);
+    for(var posicao = 0; posicao > linha.length - 1; posicao--) {
     }
-    
 }
