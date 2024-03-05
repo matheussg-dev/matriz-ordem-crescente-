@@ -1,21 +1,20 @@
 #include <stdio.h>
 
 void matrizbase(int quantidade);
-void quicksort(int matrizVerificar[], int linhas);
+void quicksort(int matrizVerificar[], int linha, int inicio, int fim);
 
 int main() {
-    
+
     int tamanho;
-    
+
     printf("Defina o tamanho da matriz:\n");
     scanf("%i", &tamanho);
-    
-    matrizbase(tamanho);
 
+    matrizbase(tamanho);
 }
 
 void matrizbase(int quantidade) {
-    
+
     int linha;
     int matrizCrescente[quantidade];
 
@@ -29,46 +28,42 @@ void matrizbase(int quantidade) {
         printf(" [%d]", matrizCrescente[linha]);
     }
 
-    quicksort(matrizCrescente, quantidade);
-    
+    quicksort(matrizCrescente, quantidade, 0, quantidade - 1);
 }
 
-void quicksort(int matrizVerificar[], int linhas) {
-    
+void quicksort(int matrizVerificar[], int linha, int inicio, int fim) {
+
     int posicao;
-    int direita = linhas - 1;
-    int esquerda = 0;
-    int referncia = matrizVerificar[0];
-    
+    int direita = fim;
+    int esquerda = inicio;
+    int referencia = matrizVerificar[0];
 
     while (esquerda <= direita) {
-        while (matrizVerificar[esquerda] < referncia) {
+        while (matrizVerificar[esquerda] < referencia) {
             esquerda++;
         }
-        while (matrizVerificar[direita] >= referncia) {
+        while (matrizVerificar[direita] >= referencia) {
             direita--;
         }
 
         if (esquerda <= direita) {
-            int veri = matrizVerificar[esquerda]; 
+            int veri = matrizVerificar[esquerda];
             matrizVerificar[esquerda] = matrizVerificar[direita];
             matrizVerificar[direita] = veri;
             direita--;
-            
         }
     }
-    
-    if(esquerda < direita) {
-        
+
+    if (inicio < direita) {
+        quicksort(matrizVerificar, linha, inicio, direita);
     }
-    
-    if(direita < esquerda) {
-        
+
+    if (esquerda < fim) {
+        quicksort(matrizVerificar, linha, esquerda, fim);
     }
 
     printf("\n\nMatriz ordenada:");
-
-    for (posicao = 0; posicao < linhas; posicao++) {
+    for (posicao = 0; posicao < linha + 1; posicao++) {
         printf(" [%d]", matrizVerificar[posicao]);
     }
 }

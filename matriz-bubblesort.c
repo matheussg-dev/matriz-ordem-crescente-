@@ -20,11 +20,11 @@ void matrizbase(int quantidade) {
     int matrizCrescente[quantidade];
 
     for (linha = 0; linha < quantidade; linha++) {
-        printf("\nDigite o número para a posição [%d].", linha);
+        printf("\nDigite o número para a posição [%d]:", linha);
         scanf("%d", &matrizCrescente[linha]);
     }
 
-    printf("\nMatriz");
+    printf("\nMatriz:");
     for (linha = 0; linha < quantidade; linha++) {
         printf(" [%d]", matrizCrescente[linha]);
     }
@@ -47,7 +47,7 @@ void bubblesort(int matrizVerificar[], int linhas) {
         }
     }
 
-    printf("\n\nMatriz ordenada.");
+    printf("\n\nMatriz ordenada:");
     
     for (i = 0; i < linhas; i++) {
         printf(" [%d]", matrizVerificar[i]);
