@@ -1,8 +1,6 @@
 #include <stdio.h>
 
-char matrizCrecente[int quantidade];
-
-int matrizbase();
+void matrizbase(int quantidade);
 void bublesort();
 
 int main() {
@@ -16,21 +14,21 @@ int main() {
     
 }
 
-int matrizbase(int quantidade) {
+void matrizbase(int quantidade) {
     
     int linha;
-    char matrizCrecente[int quantidade];
-    
-    printf("Tamanho da matriz.\n");
-    scanf("%i", &quantidade);
-    
-    
-    for (linha = 0; linha < quantidade; linha++) {
-        matrizCrecente[linha];
+    int matrizCrescente[quantidade];
 
-        printf("\nnumeros {%d}\n", linha);
-        scanf("%i", &matrizCrecente[linha]);
+    for (linha = 0; linha < quantidade; linha++) {
+        printf("\nDigite o número para a posição [%d]: ", linha);
+        scanf("%d", &matrizCrescente[linha]);
     }
+
+    for (linha = 0; linha < quantidade; linha++) {
+        printf("[%d]", matrizCrescente[linha]);
+    }
+
+    bublesort(matrizCrescente, quantidade);
 }
 
 void bublesort() {
