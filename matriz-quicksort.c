@@ -3,6 +3,7 @@
 void matrizbase(int quantidade);
 void quicksort(int matrizVerificar[], int inicio, int fim, int posicao);
 void imprimirMatriz(int matrizVerificar[], int posicao);
+void busca(int matrizVerificar[], int posicao);
 
 int main() {
     int tamanho;
@@ -70,4 +71,32 @@ void imprimirMatriz(int matrizVerificar[], int posicao) {
     for (int linha = 0; linha < posicao; linha++) {
         printf(" [%d]", matrizVerificar[linha]);
     }
+    
+    printf("\n")
+    
+    busca(matrizVerificar, posicao);
+}
+
+void busca(int matrizVerificar[], int posicao) {
+    
+    char sim;
+    char nao;
+    char resposta;
+    int target;
+    
+    printf("Voce gotaria de buscar um numero da matriz.\n");
+    printf("Sim ou Nao\n");
+    scanf("%c", &resposta);
+    
+    if(resposta == sim) {
+        printf("Escolha o numero que voce quer encontrar na matriz.\n");
+    }else if(resposta == nao) {
+        printf("Encerrando\n");
+    } else {
+        printf("Opcao invalida.\n");
+    }
+    
+    
+    
+    
 }
