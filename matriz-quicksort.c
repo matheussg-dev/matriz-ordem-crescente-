@@ -47,9 +47,9 @@ void quicksort(int matrizVerificar[], int inicio, int fim, int posicao) {
         }
 
         if (esquerda <= direita) {
-            int temp = matrizVerificar[esquerda];
+            int verificar = matrizVerificar[esquerda];
             matrizVerificar[esquerda] = matrizVerificar[direita];
-            matrizVerificar[direita] = temp;
+            matrizVerificar[direita] = verificar;
             direita--;
             esquerda++;
         }
