@@ -11,6 +11,7 @@ int main() {
     scanf("%i", &tamanho);
 
     matrizbase(tamanho);
+    
 }
 
 void matrizbase(int quantidade) {
@@ -36,7 +37,7 @@ void quicksort(int matrizVerificar[], int linha, int inicio, int fim) {
     int posicao;
     int direita = fim;
     int esquerda = inicio;
-    int referencia = matrizVerificar[0];
+    int referencia = matrizVerificar[inicio];
 
     while (esquerda <= direita) {
         while (matrizVerificar[esquerda] < referencia) {
