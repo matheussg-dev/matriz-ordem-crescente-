@@ -33,7 +33,7 @@ void matrizbase(int quantidade) {
 }
 
 void quicksort(int matrizVerificar[], int inicio, int fim, int posicao) {
-
+    
     int direita = fim;
     int esquerda = inicio;
     int referencia = matrizVerificar[inicio];
@@ -47,16 +47,19 @@ void quicksort(int matrizVerificar[], int inicio, int fim, int posicao) {
         }
 
         if (esquerda <= direita) {
-            int (matrizVerificar[esquerda]), (matrizVerificar[direita]) = (matrizVerificar[direita]), (matrizVerificar[esquerda]);
+            int temp = matrizVerificar[esquerda];
+            matrizVerificar[esquerda] = matrizVerificar[direita];
+            matrizVerificar[direita] = temp;
             direita--;
             esquerda++;
         }
     }
     
     if (inicio < direita) {
-        quicksort(matrizVerificar, posicao, inicio, direita);
-    } else if (esquerda < fim) {
-        quicksort(matrizVerificar, posicao, esquerda, fim);
+        quicksort(matrizVerificar, inicio, direita, posicao);
+    }
+    if (esquerda < fim) {
+        quicksort(matrizVerificar, esquerda, fim, posicao);
     } else {
         imprimirMatriz(matrizVerificar, posicao);
     }
