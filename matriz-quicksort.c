@@ -1,21 +1,21 @@
 #include <stdio.h>
 
 void matrizbase(int quantidade);
-void quicksort(int matrizVerificar[], int linha, int inicio, int fim);
+void quicksort(int matrizVerificar[], int inicio, int fim, int posicao);
+void imprimirMatriz(int matrizVerificar[], int posicao);
 
 int main() {
-
     int tamanho;
 
     printf("Defina o tamanho da matriz:\n");
     scanf("%i", &tamanho);
 
     matrizbase(tamanho);
-    
+
+    return 0;
 }
 
 void matrizbase(int quantidade) {
-
     int linha;
     int matrizCrescente[quantidade];
 
@@ -29,12 +29,11 @@ void matrizbase(int quantidade) {
         printf(" [%d]", matrizCrescente[linha]);
     }
 
-    quicksort(matrizCrescente, quantidade, 0, quantidade - 1);
+    quicksort(matrizCrescente, 0, quantidade - 1, quantidade);
 }
 
-void quicksort(int matrizVerificar[], int linha, int inicio, int fim) {
+void quicksort(int matrizVerificar[], int inicio, int fim, int posicao) {
 
-    int posicao;
     int direita = fim;
     int esquerda = inicio;
     int referencia = matrizVerificar[inicio];
@@ -43,28 +42,29 @@ void quicksort(int matrizVerificar[], int linha, int inicio, int fim) {
         while (matrizVerificar[esquerda] < referencia) {
             esquerda++;
         }
-        while (matrizVerificar[direita] >= referencia) {
+        while (matrizVerificar[direita] > referencia) {
             direita--;
         }
 
         if (esquerda <= direita) {
-            int veri = matrizVerificar[esquerda];
-            matrizVerificar[esquerda] = matrizVerificar[direita];
-            matrizVerificar[direita] = veri;
+            int (matrizVerificar[esquerda]), (matrizVerificar[direita]) = (matrizVerificar[direita]), (matrizVerificar[esquerda]);
             direita--;
+            esquerda++;
         }
     }
-
+    
     if (inicio < direita) {
-        quicksort(matrizVerificar, linha, inicio, direita);
+        quicksort(matrizVerificar, posicao, inicio, direita);
+    } else if (esquerda < fim) {
+        quicksort(matrizVerificar, posicao, esquerda, fim);
+    } else {
+        imprimirMatriz(matrizVerificar, posicao);
     }
+}
 
-    if (esquerda < fim) {
-        quicksort(matrizVerificar, linha, esquerda, fim);
-    }
-
+void imprimirMatriz(int matrizVerificar[], int posicao) {
     printf("\n\nMatriz ordenada:");
-    for (posicao = 0; posicao < linha + 1; posicao++) {
-        printf(" [%d]", matrizVerificar[posicao]);
+    for (int linha = 0; linha < posicao; linha++) {
+        printf(" [%d]", matrizVerificar[linha]);
     }
 }
