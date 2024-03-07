@@ -1,0 +1,31 @@
+for (int linha = 0; linha < posicao; linha++) {
+        if (matrizVerificar[linha] == target) {
+            printf("posicao foi encontrada.\n");
+            printf("target = %i\n", target);
+            printf("outpout = %i\n", matrizVerificar[linha]);
+            break;
+        } else {
+            casaNaoEncontrada(matrizVerificar, posicao, target);
+            
+        }
+    }
+}
+
+void casaNaoEncontrada(int matrizVerificar[], int posicao, int target) {
+    for (int linha = 0; linha < posicao; linha++) {
+        if (matrizVerificar[target] <= matrizVerificar[linha]) {
+            printf("posicao nao inclusa.\n");
+            printf("target = %i\n", target);
+            printf("outpout = %i\n", matrizVerificar[linha]);
+            break;
+        }
+    }
+}
+
+for (int linha = 0; linha < posicao; linha++) {
+        if (matrizVerificar[linha] == target) {
+            printf("posicao foi encontrada.\n");
+            printf("target = %i\n", target);
+            printf("outpout = %i\n", linha);
+        }
+    }

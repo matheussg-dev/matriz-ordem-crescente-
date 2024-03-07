@@ -112,7 +112,11 @@ void busca(int matrizVerificar[], int posicao) {
     
     if(indice == 1) {
         printf("posicao foi encontrada.");
+        printf("target = %i", target);
+        printf("[%i]", matrizVerificar[linha])
     } else {
-        printf("b");
+        printf("posicao nao inclusa na matriz.");
+        printf("target = %i", target);
+        printf("[%i]", matrizVerificar[linha])
     }
 }
