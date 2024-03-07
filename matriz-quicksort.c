@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 void matrizbase(int quantidade);
 void quicksort(int matrizVerificar[], int inicio, int fim, int posicao);
@@ -72,31 +73,43 @@ void imprimirMatriz(int matrizVerificar[], int posicao) {
         printf(" [%d]", matrizVerificar[linha]);
     }
     
-    printf("\n")
+    printf("\n");
     
     busca(matrizVerificar, posicao);
 }
 
 void busca(int matrizVerificar[], int posicao) {
     
-    char sim;
-    char nao;
-    char resposta;
+    int resposta = 0;
     int target;
-    
-    printf("Voce gotaria de buscar um numero da matriz.\n");
-    printf("Sim ou Nao\n");
-    scanf("%c", &resposta);
-    
-    if(resposta == sim) {
-        printf("Escolha o numero que voce quer encontrar na matriz.\n");
-    }else if(resposta == nao) {
-        printf("Encerrando\n");
+    int indice = -1;
+
+    printf("Você gostaria de buscar um número da matriz.\n");
+    printf("Sim: 1\nNao: 2\n");
+    scanf("%i", &resposta);
+
+    if (resposta == 1) {
+        printf("Escolha o número que você quer encontrar na matriz.\n");
+        scanf("%d", &target);
+    } else if (resposta == 2) {
+        printf("Encerrando.\n");
+        exit(0);
+        
     } else {
-        printf("Opcao invalida.\n");
+        printf("Opção inválida.\n");
+        return busca(matrizVerificar, posicao);
     }
     
+    for (int linha = 0; linha < posicao; linha++) {
+        if (matrizVerificar[linha] == target) {
+        int indice = linha;
+        break;
+        }
+    }
     
-    
-    
+    if(indice == -1) {
+        printf("a");
+    } else {
+        printf("b");
+    }
 }
