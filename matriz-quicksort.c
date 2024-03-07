@@ -82,7 +82,7 @@ void busca(int matrizVerificar[], int posicao) {
     
     int resposta = 0;
     int target;
-    int indice = -1;
+    int indice = 0;
 
     printf("Você gostaria de buscar um número da matriz.\n");
     printf("Sim: 1\nNao: 2\n");
@@ -90,25 +90,28 @@ void busca(int matrizVerificar[], int posicao) {
 
     if (resposta == 1) {
         printf("Escolha o número que você quer encontrar na matriz.\n");
-        scanf("%d", &target);
+        scanf("%i", &target);
     } else if (resposta == 2) {
         printf("Encerrando.\n");
         exit(0);
-        
     } else {
         printf("Opção inválida.\n");
         return busca(matrizVerificar, posicao);
     }
     
+    printf("%i-target\n", target);
+    printf("%i-posicao\n", posicao);
+    
     for (int linha = 0; linha < posicao; linha++) {
         if (matrizVerificar[linha] == target) {
-        int indice = linha;
-        break;
+        indice = 1;
+        printf("%i-indice\n", indice);
+        printf("%i-linha\n", linha);
         }
     }
     
-    if(indice == -1) {
-        printf("a");
+    if(indice == 1) {
+        printf("posicao foi encontrada.");
     } else {
         printf("b");
     }
