@@ -55,6 +55,8 @@ void bubblesort(int matrizVerificar[], int linhas) {
     for (i = 0; i < linhas; i++) {
         printf(" [%d]", matrizVerificar[i]);
     }
+    
+    printf("\n");
 
     busca(matrizVerificar, linhas);
 
@@ -87,6 +89,7 @@ void busca(int matrizVerificar[], int posicao) {
             printf("posicao foi encontrada.\n");
             printf("target = %i\n", target);
             printf("outpout = %i\n", linha);
+            exit(0);
         } else {
             buscaInconclusiva(matrizVerificar, posicao, target);
         }
@@ -100,6 +103,7 @@ void buscaInconclusiva(int matrizVerificar[], int posicao, int target) {
             printf("posicao nao inclusa.\n");
             printf("target = %i\n", target);
             printf("outpout = %i\n", linha);
+            exit(0);
         }
     }
 }
