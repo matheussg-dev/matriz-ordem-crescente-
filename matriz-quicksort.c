@@ -5,6 +5,7 @@ void matrizbase(int quantidade);
 void quicksort(int matrizVerificar[], int inicio, int fim, int posicao);
 void imprimirMatriz(int matrizVerificar[], int posicao);
 void busca(int matrizVerificar[], int posicao);
+void buscaInconclusiva(int matrizVerificar[], int posicao, int target);
 
 int main() {
     int tamanho;
@@ -72,7 +73,6 @@ void imprimirMatriz(int matrizVerificar[], int posicao) {
     for (int linha = 0; linha < posicao; linha++) {
         printf(" [%d]", matrizVerificar[linha]);
     }
-    
     printf("\n");
     
     busca(matrizVerificar, posicao);
@@ -83,6 +83,7 @@ void busca(int matrizVerificar[], int posicao) {
     int resposta = 0;
     int target;
     int indice = 0;
+    int linha;
 
     printf("Você gostaria de buscar um número da matriz.\n");
     printf("Sim: 1\nNao: 2\n");
@@ -99,24 +100,29 @@ void busca(int matrizVerificar[], int posicao) {
         return busca(matrizVerificar, posicao);
     }
     
-    printf("%i-target\n", target);
-    printf("%i-posicao\n", posicao);
-    
     for (int linha = 0; linha < posicao; linha++) {
         if (matrizVerificar[linha] == target) {
-        indice = 1;
-        printf("%i-indice\n", indice);
-        printf("%i-linha\n", linha);
+            printf("posicao foi encontrada.\n");
+            printf("target = %i\n", target);
+            printf("outpout = %i\n", linha);
         }
     }
     
-    if(indice == 1) {
-        printf("posicao foi encontrada.");
-        printf("target = %i", target);
-        printf("[%i]", matrizVerificar[linha])
-    } else {
-        printf("posicao nao inclusa na matriz.");
-        printf("target = %i", target);
-        printf("[%i]", matrizVerificar[linha])
+    buscaInconclusiva(matrizVerificar, posicao, target);
+    return busca(matrizVerificar, posicao);
+    
+}
+
+void buscaInconclusiva(int matrizVerificar[], int posicao, int target) {
+    
+    for (int linha = 0; linha < posicao; linha++) {
+        if (target <= matrizVerificar[linha]) {
+            printf("posicao nao inclusa.\n");
+            printf("target = %i\n", target);
+            printf("outpout = %i\n", linha);
+            break;
+        }
     }
+    
+    return busca(matrizVerificar, posicao);
 }
