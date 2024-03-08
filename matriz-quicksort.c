@@ -40,6 +40,7 @@ void quicksort(int matrizVerificar[], int inicio, int fim, int posicao) {
     int direita = fim;
     int esquerda = inicio;
     int referencia = matrizVerificar[inicio];
+    int loop = 0;
 
     while (esquerda <= direita) {
         while (matrizVerificar[esquerda] < referencia) {
@@ -66,9 +67,17 @@ void quicksort(int matrizVerificar[], int inicio, int fim, int posicao) {
     } else {
         imprimirMatriz(matrizVerificar, posicao);
     }
+
+    if(loop == 20) {
+        quicksort(matrizVerificar, inicio, fim, posicao);
+    }else {
+        loop++;
+    }
+
 }
 
 void imprimirMatriz(int matrizVerificar[], int posicao) {
+
     printf("\n\nMatriz ordenada:");
     for (int linha = 0; linha < posicao; linha++) {
         printf(" [%d]", matrizVerificar[linha]);
